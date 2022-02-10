@@ -1,0 +1,41 @@
+{
+    "name": "commitizen-eslint-prettier-husky-starter",
+    "version": "1.0.0",
+    "description": "This repo serves as an example project to illustrate the article 'Set up ESLint, Prettier, Commitizen, Husky and friends in 2022' article, available at jamesandrewwright.com",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier:check": "npx prettier --check .",
+        "prettier:fix": "npx prettier --write .",
+        "lint": "npx eslint .",
+        "prepare": "husky install"
+    },
+    "author": "James Wright",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jamesandrewwright/commitizen-eslint-prettier-husky-starter.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@commitlint/cli": "^16.1.0",
+        "@commitlint/config-conventional": "^16.0.0",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.8.0",
+        "eslint-config-prettier": "^8.3.0",
+        "husky": "^7.0.0",
+        "lint-staged": "^12.3.3",
+        "prettier": "^2.5.1"
+    },
+    "lint-staged": {
+        "*.{css,less,scss,html,json,jsx,js}": [
+            "prettier --write ."
+        ],
+        "*.js": "eslint --fix"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
